@@ -39,17 +39,20 @@ public class Calculadora {
         return a % b;
     }
     
-    public static int operacion(int a, int b, String operacion) {
-        if ("sumar".equals(operacion)) {
-            return a + b;
-        }else if ("restar".equals(operacion)) {
-            return a - b;
-        }else if ("multiplicar".equals(operacion)) {
-            return a * b;
-        }else if ("dividir".equals(operacion)) {
-            return a / b;
-        }else if ("modulo".equals(operacion)) {
-            return a % b;
+    public int operacion(int a, int b, String operacion) {
+        if (null != operacion) switch (operacion) {
+            case "sumar":
+                return sumar(a,b);
+            case "restar":
+                return restar(a,b);
+            case "multiplicar":
+                return multiplicar(a,b);
+            case "dividir":
+                return dividir(a,b);
+            case "modulo":
+                return modulo(a,b);
+            default:
+                throw new IllegalArgumentException("Operación no válida");
         }
         
         throw new IllegalArgumentException("Operación no válida");
