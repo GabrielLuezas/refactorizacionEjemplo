@@ -13,44 +13,44 @@ public class Calculadora {
 
     public int resultado;
     
-    public int sumar(int a, int b) {
-        return a + b;
+    public int sumar(int valor1, int valor2) {
+        return valor1 + valor2;
     }
 
-    public static int restar(int a, int b) {
-        return a - b;
+    public static int restar(int valor1, int valor2) {
+        return valor1 - valor2;
     }
 
-    public static int multiplicar(int a, int b) {
-        return a * b;
+    public static int multiplicar(int valor1, int valor2) {
+        return valor1 * valor2;
     }
 
-    public static int dividir(int a, int b) {
-        if (b == 0) {
+    public static int dividir(int valor1, int valor2) {
+        if (valor2 == 0) {
             throw new ArithmeticException("División por cero");
         }
-        return a / b;
+        return valor1 / valor2;
     }
 
-    public static int modulo(int a, int b) {
-        if (b == 0) {
+    public static int modulo(int valor1, int valor2) {
+        if (valor2 == 0) {
             throw new ArithmeticException("Módulo por cero");
         }
-        return a % b;
+        return valor1 % valor2;
     }
     
-    public int operacion(int a, int b, String operacion) {
+    public int operacion(int valor1, int valor2, String operacion) {
         if (null != operacion) switch (operacion) {
             case "sumar":
-                return sumar(a,b);
+                return sumar(valor1,valor2);
             case "restar":
-                return restar(a,b);
+                return restar(valor1,valor2);
             case "multiplicar":
-                return multiplicar(a,b);
+                return multiplicar(valor1,valor2);
             case "dividir":
-                return dividir(a,b);
+                return dividir(valor1,valor2);
             case "modulo":
-                return modulo(a,b);
+                return modulo(valor1,valor2);
             default:
                 throw new IllegalArgumentException("Operación no válida");
         }
@@ -59,7 +59,4 @@ public class Calculadora {
     }
   
 
-  public static int operacionObsoleta(int a, int b) {
-        return a + b;
-  }
 }
